@@ -1,10 +1,16 @@
-// Swiper
+const header = document.querySelector(".header");
 
-const swiper = new Swiper('.swiper', {
-    direction: 'horizontal',
-    loop: true,
-    scrollbar: {
-        el: '.swiper-scrollbar',
+window.onscroll = function () {
+  scrollFunction();
+};
 
-    }}
-    )
+function scrollFunction() {
+  if (
+    document.body.scrollTop > 150 ||
+    document.documentElement.scrollTop > 150
+  ) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
